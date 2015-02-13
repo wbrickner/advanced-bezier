@@ -1,0 +1,49 @@
+/* Written by Will Brickner */
+html, body {
+	background-color: #80aec3;
+	width: 100%;
+	padding: 0;
+	margin: 0px;
+	font-family: Helvetica;	
+}
+.wrap {
+	width: 648px;
+	margin: auto auto
+}
+#logo {
+	font-family: Helvetica;
+	font-size: 5em;
+	font-weight: 100;
+	text-align: center;
+	color: #fff;
+	display: block;
+	margin: 32px auto 32px auto;
+}
+#canvas {
+	background-color: #fff;
+	display: block;
+	margin: 0 auto 0px auto;
+	border-radius: 3px;
+}
+.docs, .docs > a
+{
+	font-family: Georgia;
+	font-style: italic;
+	font-size: large;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	margin: 32px 0px 32px 0px
+}
+.docs > a:hover {
+	color: #25343c
+}
+#regen {
+	color: #fff;
+	text-align: right;
+	margin-bottom: 6px;
+}
+#regen:hover {
+	color: #25343c;
+	cursor: pointer;
+}
