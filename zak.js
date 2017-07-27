@@ -1,11 +1,20 @@
-// Zak v1.0.0
-// Feb 11th, 2015
-// Developed by Will Brickner.
+//
+// Zak.js v1.1.0
+// Written by Will Brickner with love <3
+//
+
 function drawBez(ctx, p, startX, startY, startControlX, startControlY, endX, endY, endControlX, endControlY) {	
 	var c = getBez(0, p, startX, startY, endX, endY, startControlX, startControlY, endControlX, endControlY);
+	// a = 0, b = 1 ...
+	// x = 0, y = 1 ...
+	
 	ctx.beginPath();
+	/*
 	ctx.moveTo(c.a.x, c.a.y);
 	ctx.bezierCurveTo(c.b.x, c.b.y, c.c.x, c.c.y, c.d.x, c.d.y);
+	*/
+	ctx.moveTo(c[0][0], c[0][1]);
+	ctx.bezierCurveTo(c[1][0], c[1][1], c[2][0], c[2][1], c[3][0], c[3][1]);
 	ctx.stroke();
 	ctx.closePath();
 }
@@ -21,22 +30,22 @@ function getBez(t0, t1, x1, y1, x2, y2, bx1, by1, bx2, by2) {
 		qyc = by1*u0*u0 + by2*2*t0*u0 +  y2*t0*t0,
 		qyd = by1*u1*u1 + by2*2*t1*u1 +  y2*t1*t1;
 		
-	return {
-		a:{ 
-			x: qxa*u0 + qxc*t0,
-			y: qya*u0 + qyc*t0
-		},
-		b:{
-			x: qxa*u1 + qxc*t1,
-			y: qya*u1 + qyc*t1
-		},
-		c:{
-			x: qxb*u0 + qxd*t0,
-			y: qyb*u0 + qyd*t0
-		},
-		d:{
-			x: qxb*u1 + qxd*t1,
-			y: qyb*u1 + qyd*t1
-		}
-	};
+	return [
+		[ 
+			qxa*u0 + qxc*t0,
+			qya*u0 + qyc*t0
+		],
+		[
+			qxa*u1 + qxc*t1,
+			qya*u1 + qyc*t1
+		],
+		[
+			qxb*u0 + qxd*t0,
+			qyb*u0 + qyd*t0
+		],
+		[
+			qxb*u1 + qxd*t1,
+			qyb*u1 + qyd*t1
+		]
+	];
 }
