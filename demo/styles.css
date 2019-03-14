@@ -1,4 +1,5 @@
 /* Written by Will Brickner */
+
 html, body {
 	background-color: #80aec3;
 	width: 100%;
@@ -7,7 +8,8 @@ html, body {
 	font-family: Helvetica;	
 }
 .wrap {
-	width: 648px;
+	width: 100%;
+	max-width: 647.2px;
 	margin: auto auto
 }
 #logo {
@@ -25,8 +27,7 @@ html, body {
 	margin: 0 auto 0px auto;
 	border-radius: 3px;
 }
-.docs, .docs > a
-{
+.docs, .docs > a {
 	font-family: Georgia;
 	font-style: italic;
 	font-size: large;
@@ -41,9 +42,15 @@ html, body {
 #regen {
 	color: #fff;
 	text-align: right;
-	margin-bottom: 6px;
+	font-weight: bold;
+	margin-bottom: 15px;
 }
 #regen:hover {
 	color: #25343c;
 	cursor: pointer;
+}
+h1 {
+	text-align: center;
+	color: #fff;
+	margin: 50px;
 }
